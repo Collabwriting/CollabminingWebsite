@@ -1,22 +1,19 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import heroImage from "assets/hero.png";
+import loadingImage from "assets/loading.gif";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      aspectRatio="4:3"
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24 gap-8">
+  <div class="md:order-1 w-full overflow-hidden rounded-3xl border-4 border-black relative">
+    <div class="z-10" style="position: relative; padding-bottom: 64.98194945848375%; height: 0;"><iframe src="https://www.loom.com/embed/c559e602085a451287a9b4fa8fa4dec1?sid=a6a3925b-aafe-4ce2-90f7-61f811d52e4b?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+    <div class="absolute top-0 mx-auto h-full w-full flex items-center justify-center">
+      <img class="h-40" src={loadingImage.src} alt="loading" />
+    </div>
   </div>
   <div>
     <h1
@@ -33,9 +30,9 @@ import { Icon } from "astro-icon";
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+        <Icon class="text-white w-5 h-5" name="ph:google-chrome-logo" />
 
-        Download for Free
+        Get Started
       </Link>
       <Link
         size="lg"
@@ -44,7 +41,7 @@ import { Icon } from "astro-icon";
         href="https://github.com/Collabwriting/Truthchain"
         class="flex gap-1 items-center justify-center"
         target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        <Icon class="text-black w-4 h-4" name="ph:github-logo" />
         GitHub Repo
       </Link>
     </div>
